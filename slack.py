@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from settings import _token, _domain, _user, _time, _pretty
 
 
-if __name__ == '__main__':
+def delete_my_files():
     while 1:
         files_list_url = 'https://slack.com/api/files.list'
         date = str(calendar.timegm((datetime.now() + timedelta(-_time)).utctimetuple()))
@@ -19,8 +19,12 @@ if __name__ == '__main__':
             timestamp = str(calendar.timegm(datetime.now().utctimetuple()))
             delete_url = "https://" + _domain + ".slack.com/api/files.delete?t=" + timestamp
             requests.post(delete_url, data={
-                "token": _token, 
-                "file": f["id"], 
-                "set_active": "true", 
+                "token": _token,
+                "file": f["id"],
+                "set_active": "true",
                 "_attempts": "1"})
     print("DONE!")
+
+
+if __name__ == '__main__':
+    delete_my_files()
