@@ -40,8 +40,8 @@ def index():
     domain = request.values.get('domain')
     user = request.values.get('user')
     time = request.values.get('time')
-
-    return render_template('result.html', token=token, domain=domain, user=user, time=time)
+    if delete_my_files(token, domain, user, time):
+        return render_template('result.html', token=token, domain=domain, user=user, time=time)
 
 
 if __name__ == '__main__':
