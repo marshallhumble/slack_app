@@ -16,14 +16,10 @@
         <div class="row">
             <div class="col-md-3">
                 {{ wtf.quick_form(form) }}
-                {%  token %}
-                {%  domain %}
-                {%  user %}
-                {%  time %}
-                    <h1>Token {{ token }}</h1>
-                    <h1>domain {{ domain }}</h1>
-                    <h1>user {{ user }}</h1>
-                    <h1>time {{ time }}</h1>
+                {{ wtf.form_field(form.token) }}
+                {{ wtf.form_field(form.domain) }}
+                {{ wtf.form_field(form.user) }}
+                {{ wtf.form_field(form.time) }}
             </div>
         </div>
     </div>
