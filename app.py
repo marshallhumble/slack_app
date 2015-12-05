@@ -41,13 +41,18 @@ class NameForm(Form):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    error_message = "Must have all"
     token = request.values.get('token')
     domain = request.values.get('domain')
     user = request.values.get('user')
     time = request.values.get('time')
+    if not token:
+        return render_template('index.html')
+
     if delete_my_files(token, domain, user, time):
         return render_template('result.html', token=token, domain=domain, user=user, time=time)
 
+    return render_template('index.html', error_message=error_message)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
