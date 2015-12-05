@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.wtf import Form
-from wtforms import StringField, SubmitField, IntegerField
+from wtforms import StringField, SubmitField, FormField
 from wtforms.validators import Required, Length
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ class NameForm(Form):
     user = StringField('What is your username?', validators=[Required(), Length(1, 32)])
     domain = StringField('What is your team name?', validators=[Required(), Length(1, 16)])
     token = StringField('What is you API token?', validators=[Required(), Length(1, 40)])
-    time = IntegerField('Enter in the # of days to limit (not required)', widget=NumberInput())
+    time = FormField('Enter in the # of days to limit (not required)', widget=NumberInput())
 
     submit = SubmitField('Submit')
 
