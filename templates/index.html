@@ -13,14 +13,10 @@
 
 {% block content %}
     <div class="container">
-
-            <div class="col-md-3">
-                {{ wtf.quick_form(form) }}
-                {{ wtf.form_field(form.token) }}
-                {{ wtf.form_field(form.domain) }}
-                {{ wtf.form_field(form.user) }}
-                {{ wtf.form_field(form.time) }}
-            </div>
-
+        {{ wtf.quick_form(form) }}
+        {{ wtf.form_field(form.token) }}
+        {{ wtf.form_field(form.domain) }}
+        {{ wtf.form_field(form.user) }}
+        {{ wtf.form_field(form.time) }}
     </div>
 {% endblock %}
