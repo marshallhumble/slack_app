@@ -13,7 +13,7 @@ class NameForm(Form):
     user = StringField('What is your username?', validators=[Required(), Length(1, 32)])
     domain = StringField('What is your team name?', validators=[Required(), Length(1, 16)])
     token = StringField('What is you API token?', validators=[Required(), Length(1, 40)])
-    time = FormField('Enter in the # of days to limit (not required)', widget=NumberInput())
+    time = FormField('Enter in the # of days to limit (not required)')
 
     submit = SubmitField('Submit')
 
