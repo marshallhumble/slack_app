@@ -41,7 +41,7 @@ def index():
     user = request.values.get('user')
     time = request.values.get('time')
 
-    return render_template('result.html', form=form, token=token, domain=domain, user=user, time=time)
+    return render_template('result.html', token=token, domain=domain, user=user, time=time)
 
 
 if __name__ == '__main__':
