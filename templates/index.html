@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Form Example{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Hello</a>
+        </div>    
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                {{ wtf.quick_form(form) }}
+                {% if token %}
+                {% if domain %}
+                {% if user %}
+                {% if time %}
+                    <h1>Token {{ token }}</h1>
+                    <h1>domain {{ domain }}</h1>
+                    <h1>user {{ user }}</h1>
+                    <h1>time {{ time }}</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
