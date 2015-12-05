@@ -2,9 +2,8 @@
 <div class="ui middle aligned center aligned grid">
   <div class="column">
     <h2 class="ui teal image header">
-      <img src={{ url_for('static', filename='img/cake.png') }} class="image">
       <div class="content">
-        Find A Redditor's Cake Day
+        Delete Your Files on Slack
       </div>
     </h2>
     <form class="ui large form">
@@ -12,10 +11,13 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="username" placeholder="Reddit Username">
+            <input type="text" name="token" placeholder="Slack token">
+            <input type="text" name="domain" placeholder="Slack Domain">
+            <input type="text" name="user" placeholder="Slack Username">
+            <input type="text" name="time" placeholder="Numbers of Days back you want to save">
+
           </div>
         </div>
-        <div class="ui fluid large teal submit button">Submit</div>
       </div>
       <div class="ui error message"></div>
     </form>
