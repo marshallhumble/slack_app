@@ -3,7 +3,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
-bootstrap = Bootstrap(app)
 
 
 def delete_my_files(token, domain, user, time):
